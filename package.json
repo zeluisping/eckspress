@@ -1,0 +1,46 @@
+{
+    "name": "eckspress",
+    "version": "0.0.1",
+    "description": "Another approach to using express",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "lint": "tslint -p tsconfig.json",
+        "prepare": "npm run build",
+        "prepublish": "npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeluisping/eckspress.git"
+    },
+    "keywords": [
+        "express",
+        "nodejs",
+        "typescript"
+    ],
+    "author": "Luís 'zeluisping' Guimarães",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zeluisping/eckspress/issues"
+    },
+    "homepage": "https://github.com/zeluisping/eckspress#readme",
+    "devDependencies": {
+        "@types/express": "^4.17.0",
+        "prettier": "^1.18.2",
+        "tslint": "^5.18.0",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.5.3"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
