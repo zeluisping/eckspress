@@ -1,16 +1,16 @@
 import { Request, Response } from 'express';
-import Result from './Result';
+import BaseResponse from '../BaseResponse';
 
-export default class Success extends Result {
+export class Success extends BaseResponse {
     public static Handler = async (req: Request, res: Response, body: any) => {
-        return res.status(200).send(body);
+        return res.send(body);
     };
 
-    constructor(private readonly body?: any) {
+    constructor(private readonly body: any) {
         super();
     }
 
     public async Handle(req: Request, res: Response): Promise<any> {
-        return Success.Handler(req, res, this.body);
+        return Success.Handler(req, res.status(200), this.body);
     }
 }
