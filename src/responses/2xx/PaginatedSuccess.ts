@@ -1,18 +1,18 @@
 import { Request, Response } from 'express';
 import BaseResponse from '../BaseResponse';
 
-export interface Pagination {
+export interface IPagination {
     count: number;
     page: number;
     limit: number;
 }
 
 export class PaginatedSuccess extends BaseResponse {
-    public static Handler = async (req: Request, res: Response, body: any[], pagination: Pagination) => {
+    public static Handler = async (req: Request, res: Response, body: any[], pagination: IPagination) => {
         return res.send(body);
     };
 
-    constructor(private readonly body: any[], private readonly pagination: Pagination) {
+    constructor(private readonly body: any[], private readonly pagination: IPagination) {
         super();
     }
 
