@@ -1,6 +1,6 @@
 {
     "name": "eckspress",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Another approach to using express",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
