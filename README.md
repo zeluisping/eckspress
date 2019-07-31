@@ -7,6 +7,9 @@ Just a way to use middlewares with contexts with nice typescript type inference.
 An example usage, for what is currently implemented, could be something like this:
 
 ```typescript
+import { Request, Response } from 'express';
+import { BadRequest } from 'eckspress';
+
 function paramID(req: Request, res: Response) {
     if (isNaN(+req.params.id)) {
         return new BadRequest('invalid id, must be number', { params: req.params.id });
